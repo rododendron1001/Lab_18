@@ -44,6 +44,30 @@ namespace Lab_18
             element = default(T);
             return element;
         }
-        
+
+        public static T[] CopyRange(T[] array, int startIndex, int length)
+        {
+            if (array is null)
+            {
+                return new T[] { };
+            }
+
+            if ((startIndex < 0) || (startIndex >= array.Length))
+            {
+                return new T[] { };
+            }
+
+            int actualLength = Math.Min(length, array.Length - startIndex);
+
+            T[] result = new T[actualLength];
+
+            for (int i = 0; i < actualLength; i++)
+            {
+                result[i] = array[startIndex + i];
+            }
+
+            return result;
+        }
+
     }
 }
