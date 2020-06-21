@@ -5,7 +5,8 @@ using System.Text;
 namespace Lab_18
 {
     public class ArrayHelper<T>
-        
+        where T:IEquatable<T>
+      
     {
         private readonly T[] array;
         public ArrayHelper(params T[] array)
@@ -13,25 +14,25 @@ namespace Lab_18
             this.array = array ?? new T[0];
         }
 
-        public int IndexOf<T>(this T[] array, T searchElement)
+        
+
+        public int FindElement(this T[] array, T searchElement)
         {
-            int index;
-            bool res = Array.Exists<T>(array, x => x.Equals(searchElement));
-            if (res == true) 
+            int index = 0;
+            bool res;
+            for (int i =0; i < array.Length; i++)
+            {
+                res = ((IEquatable<T>)searchElement).Equals(array[i]);
+                if (res)
                 {
-                index = Array.IndexOf<T>(array, searchElement);
-                return index;
+                    index = i;
+                    
+                }
+                index = -1;
             }
-
-            //int index = Array.IndexOf<T>(array, x => x.Equals(searchElement))
-            return -1;
+            return index;
         }
 
-        public static bool Contains<T>(this T[] array, T searchElement)
-        {
-            // If you want this to find "null" values, you could change the code here
-            return Array.Exists<T>(array, x => x.Equals(searchElement));
-            
-        }
+        
     }
 }
