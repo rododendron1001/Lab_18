@@ -5,7 +5,7 @@ using System.Text;
 namespace Lab_18
 {
     public class ArrayHelper<T>
-        where T:IEquatable<T>
+        where T:IEquatable<T>, IComparable<T>
       
     {
         private readonly T[] array;
@@ -33,6 +33,17 @@ namespace Lab_18
             return index;
         }
 
+        public T GetElement(int index)
+        {
+            T element;
+            if ((index >=0) && (index < this.array.Length))
+            {
+                element = this.array[index];
+               
+            }
+            element = default(T);
+            return element;
+        }
         
     }
 }
