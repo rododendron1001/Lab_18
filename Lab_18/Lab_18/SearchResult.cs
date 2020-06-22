@@ -16,10 +16,10 @@ namespace Lab_18
             if ((index >= 0) && (index < this.array.Length))
             {
                 element = this.array[index];
-                index_ok = "Index Ok ";
+                index_ok = "Index found, Ok ";
             }
             element = default(T);
-            index_ok = "Index NOT Ok ";
+            index_ok = "Index NOT found, NOT Ok ";
 
             Console.WriteLine(index_ok);
             return  (index_ok, element);
