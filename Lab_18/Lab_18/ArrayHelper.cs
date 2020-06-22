@@ -69,5 +69,50 @@ namespace Lab_18
             return result;
         }
 
+        public static T[] ExchangeSort(T[] array, SortDirection sortDirection)
+        {
+            if ((array ?? new T[] { }).Length == 0)
+            {
+                return new T[] { };
+            }
+
+            T[] result = CopyRange(array, 0, array.Length);
+
+            for (int i = 0; i < result.Length - 1; i++)
+            {
+                for (int j = i + 1; j < result.Length; j++)
+                {
+                    bool interchange = false;
+
+                    switch (sortDirection)
+                    {
+                        case SortDirection.Descending:
+                            if (result[i] < result[j])
+                            {
+                                interchange = true;
+                            }
+                            break;
+
+                        case SortDirection.Ascending:
+                        default:
+                            if (result[i] > result[j])
+                            {
+                                interchange = true;
+                            }
+                            break;
+                    }
+
+                    if (interchange)
+                    {
+                        T aux = result[i];
+                        result[i] = result[j];
+                        result[j] = aux;
+                    }
+                }
+            }
+
+            return result;
+        }
+
     }
 }
