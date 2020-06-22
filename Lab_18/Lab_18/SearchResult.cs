@@ -8,7 +8,7 @@ namespace Lab_18
     {
         private readonly T[] array;
 
-        public T FindElement(int index)
+        public (string, T) FindElement(int index)
         {
             T element;
             string index_ok = String.Empty;
@@ -22,7 +22,7 @@ namespace Lab_18
             index_ok = "Index NOT Ok ";
 
             Console.WriteLine(index_ok);
-            return  element;
+            return  (index_ok, element);
         }
     }
 }
