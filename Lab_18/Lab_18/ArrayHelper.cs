@@ -16,7 +16,7 @@ namespace Lab_18
 
         
 
-        public int FindElement(this T[] array, T searchElement)
+        public int FindIndex(this T[] array, T searchElement)
         {
             int index = 0;
             bool res;
@@ -33,7 +33,7 @@ namespace Lab_18
             return index;
         }
 
-        public T GetElement(int index)
+        public T FindElement(int index)
         {
             T element;
             if ((index >=0) && (index < this.array.Length))
@@ -87,7 +87,7 @@ namespace Lab_18
                     switch (sortDirection)
                     {
                         case SortDirection.Descending:
-                            //if (result[i] < result[j])
+                            
                             if ( result[i].CompareTo( result[j]) == -1 )
                                 {
                                 interchange = true;
@@ -96,7 +96,7 @@ namespace Lab_18
 
                         case SortDirection.Ascending:
                         default:
-                            //if (result[i] > result[j])
+                            
                             if (result[i].CompareTo(result[j]) == 1)
                                 {
                                 interchange = true;
@@ -115,6 +115,8 @@ namespace Lab_18
 
             return result;
         }
+
+
 
     }
 }
