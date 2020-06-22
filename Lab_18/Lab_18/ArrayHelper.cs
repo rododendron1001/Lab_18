@@ -87,16 +87,18 @@ namespace Lab_18
                     switch (sortDirection)
                     {
                         case SortDirection.Descending:
-                            if (result[i] < result[j])
-                            {
+                            //if (result[i] < result[j])
+                            if ( result[i].CompareTo( result[j]) == -1 )
+                                {
                                 interchange = true;
                             }
                             break;
 
                         case SortDirection.Ascending:
                         default:
-                            if (result[i] > result[j])
-                            {
+                            //if (result[i] > result[j])
+                            if (result[i].CompareTo(result[j]) == 1)
+                                {
                                 interchange = true;
                             }
                             break;
