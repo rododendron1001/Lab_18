@@ -10,7 +10,7 @@ namespace Lab_18
         static void Main(string[] args)
         {
             
-            Func<T[], T[], T[]> add = Sum;
+            
         }
 
         
@@ -23,7 +23,7 @@ namespace Lab_18
 
             for (int i = 0; i < length; i++)
                 if (i < length)
-                    //newArray[i] = array1[i] + array2[i];
+                    
                     newArray[i] = Add(array1[i],array2[i]);
 
                 else
@@ -39,7 +39,6 @@ namespace Lab_18
             dynamic A = a;
             dynamic B = b;
 
-
             // Add the parameters together
             T result = A + B;
 
@@ -48,17 +47,31 @@ namespace Lab_18
             Func<T, T, T> add1 = Add;
 
             // Call it
-            return add1(a, b);           
-            
+            return add1(a, b);                       
         }
 
-        public static bool FindElem<T>(T[] array, T target )
+        public static bool FindElem<T>( T[] array, T target )
         {
+            // indica daca elementul exista sau nu in array
             bool result = array.Contains(target);
 
             Func<T[], T, bool> find1 = FindElem;
+          
+
             return find1(array,target);
         }
+
+        public static (bool,int) FindElemIndex<T> (T[] array, T target)
+        {
+            // indica daca elementul exista (si intoarce indexul sau) sau nu (si intoarce index= -1) in array 
+            bool result = Array.FindIndex(array, x => x.Equals(target)) != -1;
+           
+            int index = Array.FindIndex(array, x => x.Equals(target));
+           
+            //Func<T[], T, bool,int> findIndex1 = FindElemIndex;
+            return (result, index);
+        }
+
 
 
     }
