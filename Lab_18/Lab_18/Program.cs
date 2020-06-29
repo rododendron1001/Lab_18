@@ -9,7 +9,8 @@ namespace Lab_18
     {
         static void Main(string[] args)
         {
-            
+           
+
             
         }
 
@@ -35,7 +36,7 @@ namespace Lab_18
         public static T Add <T>(T a, T b)
         //adunare intre 2 valori de un tip de date generic
         {
-            // Declare the parameters
+            // parameters
             dynamic A = a;
             dynamic B = b;
 
@@ -55,6 +56,7 @@ namespace Lab_18
             // indica daca elementul exista sau nu in array
             bool result = array.Contains(target);
 
+            // Delegate
             Func<T[], T, bool> find1 = FindElem;
           
 
@@ -72,6 +74,10 @@ namespace Lab_18
             return (result, index);
         }
 
+
+
+
+     
 
 
     }
