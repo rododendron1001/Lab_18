@@ -14,19 +14,20 @@ namespace Lab_18
             this.array = array ?? new T[0];
         }
 
-        
+       
 
-        public int FindIndex(this T[] array, T searchElement)
+        public int FindIndex( T[] array, T searchElement)
         {
             int index = 0;
             bool res;
-            for (int i =0; i < array.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
-                res = ((IEquatable<T>)searchElement).Equals(array[i]);
+                //res = ((IEquatable<T>)searchElement).Equals(array[i]);
+                res = ((searchElement).Equals(array[i]));
                 if (res)
                 {
                     index = i;
-                    
+
                 }
                 index = -1;
             }
