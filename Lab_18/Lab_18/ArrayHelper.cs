@@ -14,11 +14,7 @@ namespace Lab_18
             this.array = array ?? new T[0];
         }
 
-        public bool Equals(T other)
-        {
-            if (other == null) return false;
-            return true;
-        }
+        
 
 
         public int FindIndex( T[] array, T searchElement)
