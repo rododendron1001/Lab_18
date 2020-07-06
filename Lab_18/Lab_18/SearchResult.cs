@@ -10,6 +10,8 @@ namespace Lab_18
 
         public (string, T) FindElement(int index)
         {
+            //returnarea elementului de la un index dat si un flag care sa indice daca indexul a fost valid sau nu
+
             T element;
             string index_ok = String.Empty;
 

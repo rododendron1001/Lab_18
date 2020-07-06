@@ -19,6 +19,7 @@ namespace Lab_18
 
         public int FindIndex( T[] array, T searchElement)
         {
+            //Returnarea indexului unui element dat, daca nu exista se returneaza -1
             int index = 0;
             bool res;
             for (int i = 0; i < array.Length; i++)
@@ -49,6 +50,8 @@ namespace Lab_18
 
         public static T[] CopyRange(T[] array, int startIndex, int length)
         {
+            //Returnarea unui subsir, pe baza unui index de start si a unei lungimi
+
             if (array is null)
             {
                 return new T[] { };
@@ -72,6 +75,7 @@ namespace Lab_18
         }
 
         public static T[] ExchangeSort(T[] array, SortDirection sortDirection)
+        //Sortarea  sirului
         {
             if ((array ?? new T[] { }).Length == 0)
             {

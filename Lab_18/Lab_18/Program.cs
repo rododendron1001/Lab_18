@@ -40,7 +40,7 @@ namespace Lab_18
             dynamic A = a;
             dynamic B = b;
 
-            // Add the parameters together
+            // Add the parameters 
             T result = A + B;
 
             // Delegate
@@ -75,7 +75,24 @@ namespace Lab_18
         }
 
 
+        public static T[] DelFromArray<T> (T[] array)
+        {
+            // stergere elemente care satisfac o anumita conditie :  sunt null
 
+            List<T> list = array.ToList();
+
+            list.RemoveAll(delegate (T elem)
+            {
+                if (elem is object)
+                {
+                    return (elem is null);
+                }
+                return false;
+            }
+                );
+            T[] result = list.ToArray();
+            return result;
+        }
 
      
 
